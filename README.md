@@ -290,7 +290,7 @@ inputs/
 └── insurance/            # H01–H10
 scripts/                  # run_inputs.py, export_csv.py
 tests/                    # 36 unit-тестов + API-тесты
-docs/                     # SVG-схемы, отчёт, сценарии демо и защиты
+docs/                     # SVG-схемы процессов
 ```
 
 ### Как добавить новый процесс
@@ -311,13 +311,6 @@ Backend, БД и API менять не нужно — конвейер, ауди
 | Все ответы `validation_error` | Модель отдаёт не-JSON: проверьте `LLM_MODEL`, попробуйте `USE_JSON_MODE=true` |
 | `Unknown case_type` | Допустимые значения: `financial`, `insurance` |
 | Кириллица «каракулями» в консоли | `chcp 65001` или `$env:PYTHONIOENCODING="utf-8"` перед запуском скриптов |
-
-## Документация
-
-- [docs/REPORT.md](docs/REPORT.md) — отчёт по практике
-- [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — сценарий демо-видео (2–3 мин)
-- [docs/DEFENSE_SCRIPT.md](docs/DEFENSE_SCRIPT.md) — сценарий защиты проекта
-- [docs/RESPONSES_LOG.md](docs/RESPONSES_LOG.md) — шаблон лога откликов
 
 ## Лицензия
 
