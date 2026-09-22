@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#fff;stroke:#475569;stroke-width:1.5}
+    .lbl{font-size:14px;fill:#0f172a;text-anchor:middle}
+    .sub{font-size:11px;fill:#64748b;text-anchor:middle}
+    .arr{stroke:#475569;stroke-width:1.5;fill:none;marker-end:url(#arrow2)}
+    .red{fill:#fef2f2;stroke:#dc2626;stroke-width:1.5}
+    .green{fill:#f0fdf4;stroke:#16a34a;stroke-width:1.5}
+    .db{fill:#eff6ff;stroke:#2563eb;stroke-width:1.5}
+  </style>
+
+  <text x="280" y="26" class="lbl" font-weight="bold">Кейс H — Insurance Claim Triage</text>
+
+  <rect x="120" y="48" width="320" height="56" class="box"/>
+  <text x="280" y="70" class="lbl">Заявление о страховом случае</text>
+  <text x="280" y="90" class="sub">«повреждён станок при перевозке, ущерб 180 000 руб., полиса нет»</text>
+
+  <path d="M280,104 L280,132" class="arr"/>
+  <rect x="150" y="132" width="260" height="56" class="box"/>
+  <text x="280" y="152" class="lbl">LLM extraction (только факты)</text>
+  <text x="280" y="168" class="sub">LLM НЕ решает: выплата / виновность / юр-факт</text>
+  <text x="280" y="182" class="sub">schema: InsuranceClaim</text>
+
+  <path d="M280,188 L280,216" class="arr"/>
+  <rect x="150" y="216" width="260" height="44" class="box"/>
+  <text x="280" y="234" class="lbl">Pydantic validation</text>
+  <text x="280" y="252" class="sub">claim_type, evidence, estimated_damage ≥ 0</text>
+
+  <path d="M280,260 L280,288" class="arr"/>
+  <rect x="150" y="288" width="260" height="44" class="box"/>
+  <text x="280" y="306" class="lbl">Completeness rules (Python)</text>
+  <text x="280" y="324" class="sub">required: incident_date, description, policy_number, evidence</text>
+
+  <path d="M410,310 L470,310 L470,364" class="arr" style="stroke:#dc2626"/>
+  <rect x="400" y="364" width="140" height="34" class="red"/>
+  <text x="470" y="386" class="lbl" fill="#dc2626">request_info / review</text>
+
+  <path d="M280,332 L280,364" class="arr"/>
+  <rect x="150" y="364" width="200" height="34" class="green"/>
+  <text x="250" y="386" class="lbl" fill="#166534">register_claim</text>
+
+  <path d="M280,398 L280,426" class="arr"/>
+  <rect x="150" y="426" width="260" height="44" class="db"/>
+  <text x="280" y="444" class="lbl" fill="#1e40af">SQLite: results + audit_log</text>
+  <text x="280" y="462" class="sub">human-in-the-loop: эскалация = очередь для оператора</text>
+</svg>

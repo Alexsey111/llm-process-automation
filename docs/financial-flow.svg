@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#fff;stroke:#475569;stroke-width:1.5}
+    .lbl{font-size:14px;fill:#0f172a;text-anchor:middle}
+    .sub{font-size:11px;fill:#64748b;text-anchor:middle}
+    .arr{stroke:#475569;stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+    .red{fill:#fef2f2;stroke:#dc2626;stroke-width:1.5}
+    .green{fill:#f0fdf4;stroke:#16a34a;stroke-width:1.5}
+    .db{fill:#eff6ff;stroke:#2563eb;stroke-width:1.5}
+  </style>
+
+  <text x="280" y="26" class="lbl" font-weight="bold">Кейс F — Financial Document Processor</text>
+
+  <rect x="120" y="48" width="320" height="56" class="box"/>
+  <text x="280" y="70" class="lbl">Счёт / заявка на расход</text>
+  <text x="280" y="90" class="sub">«Счёт №481 от 18.09.2026, ООО Альфа, 125 000 руб., НДС 20%»</text>
+
+  <path d="M280,104 L280,132" class="arr"/>
+  <rect x="150" y="132" width="260" height="44" class="box"/>
+  <text x="280" y="150" class="lbl">LLM extraction</text>
+  <text x="280" y="168" class="sub">schema: FinancialExtraction</text>
+
+  <path d="M280,176 L280,204" class="arr"/>
+  <rect x="150" y="204" width="260" height="44" class="box"/>
+  <text x="280" y="222" class="lbl">Pydantic validation</text>
+  <text x="280" y="240" class="sub">литералы, amount ≥ 0, vat 0–100, даты</text>
+
+  <path d="M280,248 L280,276" class="arr"/>
+  <rect x="150" y="276" width="260" height="44" class="box"/>
+  <text x="280" y="294" class="lbl">Business rules (Python)</text>
+  <text x="280" y="312" class="sub">required: document_number, counterparty, amount</text>
+
+  <path d="M410,298 L470,298 L470,352" class="arr" style="stroke:#dc2626"/>
+  <rect x="410" y="352" width="130" height="34" class="red"/>
+  <text x="475" y="374" class="lbl" fill="#dc2626">escalate = true</text>
+
+  <path d="M280,320 L280,352" class="arr"/>
+  <rect x="150" y="352" width="200" height="34" class="green"/>
+  <text x="250" y="374" class="lbl" fill="#166534">approve_payment</text>
+
+  <path d="M280,386 L280,414" class="arr"/>
+  <rect x="150" y="414" width="260" height="44" class="db"/>
+  <text x="280" y="432" class="lbl" fill="#1e40af">SQLite: results + audit_log</text>
+  <text x="280" y="450" class="sub">+ дублирование в results/financial/*.json</text>
+</svg>

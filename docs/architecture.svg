@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#fff;stroke:#475569;stroke-width:1.5;rx:8}
+    .lbl{font-size:14px;fill:#0f172a;text-anchor:middle}
+    .sub{font-size:11px;fill:#64748b;text-anchor:middle}
+    .arr{stroke:#475569;stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+    .arrR{stroke:#dc2626;stroke-width:1.5;fill:none;stroke-dasharray:5 4;marker-end:url(#arrowRed)}
+    .red{fill:#fef2f2;stroke:#dc2626;stroke-width:1.5}
+    .green{fill:#f0fdf4;stroke:#16a34a;stroke-width:1.5}
+    .db{fill:#eff6ff;stroke:#2563eb;stroke-width:1.5}
+  </style>
+
+  <rect x="180" y="16" width="200" height="40" class="box"/>
+  <text x="280" y="41" class="lbl">Client / inputs/</text>
+
+  <path d="M280,56 L280,84" class="arr"/>
+  <rect x="170" y="84" width="220" height="40" class="box"/>
+  <text x="280" y="109" class="lbl">POST /ingest</text>
+
+  <path d="M280,124 L280,152" class="arr"/>
+  <rect x="160" y="152" width="240" height="44" class="box"/>
+  <text x="280" y="171" class="lbl">LLM extraction</text>
+  <text x="280" y="188" class="sub">temperature = 0.2, JSON mode</text>
+
+  <path d="M280,196 L280,224" class="arr"/>
+  <rect x="150" y="224" width="260" height="40" class="box"/>
+  <text x="280" y="242" class="lbl">Structured JSON</text>
+  <text x="280" y="258" class="sub">category / fields / confidence / missing</text>
+
+  <path d="M280,264 L280,292" class="arr"/>
+  <rect x="140" y="292" width="280" height="40" class="box"/>
+  <text x="280" y="317" class="lbl">Level 1: Pydantic schema validation</text>
+
+  <path d="M420,312 L470,312 L470,368" class="arrR"/>
+  <text x="445" y="345" class="sub" transform="rotate(90 445 345)" fill="#dc2626">invalid</text>
+
+  <path d="M280,332 L280,360" class="arr"/>
+  <rect x="140" y="360" width="280" height="40" class="box"/>
+  <text x="280" y="385" class="lbl">Level 2: deterministic business rules</text>
+
+  <path d="M420,380 L470,380 L470,368" class="arrR"/>
+  <rect x="380" y="420" width="150" height="40" class="red"/>
+  <text x="455" y="445" class="lbl" fill="#dc2626">ESCALATE</text>
+
+  <path d="M280,400 L280,440" class="arr"/>
+  <rect x="150" y="440" width="260" height="36" class="green"/>
+  <text x="280" y="463" class="lbl" fill="#166534">status: success | escalated</text>
+
+  <path d="M280,476 L280,504" class="arr"/>
+  <rect x="140" y="504" width="280" height="44" class="db"/>
+  <text x="280" y="522" class="lbl" fill="#1e40af">SQLite</text>
+  <text x="280" y="540" class="sub">results + audit_log</text>
+
+  <path d="M280,548 L280,576" class="arr"/>
+  <rect x="140" y="576" width="280" height="44" class="box"/>
+  <text x="280" y="594" class="lbl">Действие</text>
+  <text x="280" y="612" class="sub">запись результата (БД) + JSON/CSV-экспорт</text>
+
+  <rect x="100" y="648" width="360" height="52" class="box"/>
+  <text x="280" y="668" class="lbl">LLM ≠ источник истины</text>
+  <text x="280" y="686" class="sub">LLM извлекает данные, Python-правила принимают решение</text>
+</svg>

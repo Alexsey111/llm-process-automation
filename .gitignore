@@ -1,0 +1,22 @@
+# Секреты
+.env
+
+# Данные
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+
+# ОС
+.DS_Store
+Thumbs.db
