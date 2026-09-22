@@ -246,7 +246,7 @@ results(
 ## Тесты
 
 ```bash
-python -m pytest tests/ -v    # 36 тестов: правила, конвейер, API (LLM замокан)
+python -m pytest tests/ -v    # 38 тестов: правила, конвейер, API (LLM замокан)
 ```
 
 Покрытие: business rules обоих кейсов (в т.ч. «LLM солгала про escalate — Python исправляет»),
@@ -289,7 +289,7 @@ inputs/
 ├── financial/            # F01–F10
 └── insurance/            # H01–H10
 scripts/                  # run_inputs.py, export_csv.py
-tests/                    # 36 unit-тестов + API-тесты
+tests/                    # 38 unit-тестов + API-тесты
 docs/                     # SVG-схемы процессов
 ```
 

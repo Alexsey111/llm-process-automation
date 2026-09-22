@@ -17,6 +17,19 @@ def test_health(mock_llm):
     assert r.json() == {"status": "ok"}
 
 
+def test_root_lists_endpoints():
+    r = client.get("/")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["version"] == app.version
+    assert "POST /ingest" in body["endpoints"]
+
+
+def test_openapi_contains_all_public_routes():
+    paths = client.get("/openapi.json").json()["paths"]
+    assert set(paths) == {"/ingest", "/audit", "/results", "/health", "/"}
+
+
 def test_ingest_success(mock_llm):
     mock_llm["set"]({
         "document_type": "invoice", "document_number": "481",
